@@ -2,22 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta name="google-site-verification" content="HlReEf-HD6a_oCKJbqCT0_lrJw9MIKRXGPHqOOtHMTg" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Web Scratch | AI Agency & Automation Agency</title>
-
-    
-    <meta name="description" content="Web Scratch is an AI-agentic digital agency specializing in web development, automation systems, and intelligent digital experiences.">
-<meta name="keywords" content="Web Scratch, AI agency, web development, automation, digital agency India">
-<meta name="author" content="Web Scratch">
-    <meta property="og:title" content="Web Scratch">
-<meta property="og:description" content="AI Web Development & Automation Agency">
-<meta property="og:url" content="https://webscratch.in">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Web Scratch">
+    <title>Web Scratch | AI-Agentic Digital Agency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap"
         rel="stylesheet">
@@ -2192,7 +2181,6 @@
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -2242,8 +2230,8 @@
                         <div>// NO VIDEO //</div>
                         <div style="font-size:0.7rem; opacity:0.6">add data-video="your-file.mp4" to project card</div>
                     </div>
-                    <video id="modal-video" preload="auto" style="display:none; width:100%;"
-                        controlslist="nodownload" playsinline></video>
+                    <video id="modal-video" preload="auto" style="display:none; width:100%;" controlslist="nodownload"
+                        playsinline></video>
                 </div>
                 <div class="modal-controls" id="modal-controls" style="display: none;">
                     <div class="ctrl-bar" id="ctrl-bar">
@@ -2657,34 +2645,32 @@
                     <p class="testi-text">Web Scratch didn't just build us a website — they engineered a conversion
                         machine. Our revenue doubled in the first 60 days post-launch.</p>
                     <div class="testi-author">
-                        <div class="testi-avatar">AK</div>
+                        <div class="testi-avatar">H</div>
                         <div>
-                            <div class="testi-name">ARJUN KAPOOR</div>
-                            <div class="testi-role">CEO, NexaCommerce</div>
+                            <div class="testi-name">Haritha / MGR</div>
+                            <div class="testi-role">Founder, MGR ALL IN ONE SERVICES</div>
                         </div>
                     </div>
                 </div>
                 <div class="testi-card reveal">
                     <div class="testi-stars">★★★★★</div>
-                    <p class="testi-text">The AI automation pipeline they built for us is insane. It's like having a
-                        full sales team working 24/7 without salaries.</p>
+                    <p class="testi-text">The Website Was Amazing The Coloring And Feature's Everything Was Perfect!</p>
                     <div class="testi-author">
-                        <div class="testi-avatar">SR</div>
+                        <div class="testi-avatar">T</div>
                         <div>
-                            <div class="testi-name">SARAH RAMOS</div>
-                            <div class="testi-role">Founder, ScaleFlow Agency</div>
+                            <div class="testi-name">Tulasi</div>
+                            <div class="testi-role">Founder, Rent Nivas</div>
                         </div>
                     </div>
                 </div>
                 <div class="testi-card reveal">
                     <div class="testi-stars">★★★★★</div>
-                    <p class="testi-text">The 3D product video went viral before we even ran paid ads. 2 million views
-                        in a week.</p>
+                    <p class="testi-text">The Ai Explaination Video's Were Super Good</p>
                     <div class="testi-author">
-                        <div class="testi-avatar">MV</div>
+                        <div class="testi-avatar">R</div>
                         <div>
-                            <div class="testi-name">MARCUS VALE</div>
-                            <div class="testi-role">CMO, LuxeCraft Watches</div>
+                            <div class="testi-name">Raj</div>
+                            <div class="testi-role"></div>
                         </div>
                     </div>
                 </div>
@@ -2972,7 +2958,7 @@
             var tabInfo = document.getElementById('tab-info');
 
             function formatTime(sec) { if (isNaN(sec) || !isFinite(sec)) return '0:00'; var m = Math.floor(sec / 60); var s = Math.floor(sec % 60); return m + ':' + (s < 10 ? '0' : '') + s; }
-            
+
             function updateTime() {
                 if (!mVid || !mVid.duration) return;
                 cTime.textContent = formatTime(mVid.currentTime) + ' / ' + formatTime(mVid.duration);
@@ -2980,7 +2966,7 @@
                 if (cFill) cFill.style.width = percent + '%';
                 if (cThumb) cThumb.style.left = 'calc(' + percent + '% - 8px)';
             }
-            
+
             function updatePlayButton() { if (cPlay) cPlay.textContent = mVid.paused ? '▶' : '⏸'; }
 
             function openModal(card) {
@@ -2988,16 +2974,16 @@
                 var titleEl = document.getElementById('modal-proj-name');
                 var descEl = document.getElementById('modal-proj-desc');
                 var tagsEl = document.getElementById('modal-proj-tags');
-                
+
                 if (titleEl) titleEl.textContent = card.dataset.title || '';
                 if (descEl) descEl.textContent = card.dataset.desc || '';
                 if (tagsEl) tagsEl.innerHTML = (card.dataset.tags || '').split(',').filter(Boolean).map(function (t) { return '<span class="modal-info-tag">' + t.trim() + '</span>'; }).join('');
 
                 // Reset video state
-                if (mVid) { 
-                    mVid.pause(); 
-                    mVid.src = ''; 
-                    mVid.style.display = 'none'; 
+                if (mVid) {
+                    mVid.pause();
+                    mVid.src = '';
+                    mVid.style.display = 'none';
                     mVid.removeAttribute('src');
                     mVid.load();
                 }
@@ -3011,18 +2997,18 @@
                     mVid.style.display = 'block';
                     if (noMedia) noMedia.style.display = 'none';
                     if (mCtrl) mCtrl.style.display = 'block';
-                    
+
                     // Load and play video
                     mVid.load();
-                    
+
                     // Use canplay event to ensure video is ready
                     mVid.addEventListener('canplay', function onCanPlay() {
-                        mVid.play().catch(function(error) {
+                        mVid.play().catch(function (error) {
                             console.log("Auto-play prevented:", error);
                         });
                         mVid.removeEventListener('canplay', onCanPlay);
                     }, { once: true });
-                    
+
                     // Update time when metadata loaded
                     mVid.addEventListener('loadedmetadata', function onMeta() {
                         updateTime();
@@ -3032,8 +3018,8 @@
                 }
 
                 // Reset to player tab
-                document.querySelectorAll('.modal-tab').forEach(function (t) { 
-                    t.classList.toggle('active', t.dataset.tab === 'player'); 
+                document.querySelectorAll('.modal-tab').forEach(function (t) {
+                    t.classList.toggle('active', t.dataset.tab === 'player');
                 });
                 if (tabPlayer) tabPlayer.style.display = 'block';
                 if (tabInfo) tabInfo.style.display = 'none';
@@ -3045,10 +3031,10 @@
             function closeModal() {
                 if (overlay) overlay.classList.remove('open');
                 document.body.style.overflow = 'auto';
-                if (mVid) { 
-                    mVid.pause(); 
-                    mVid.currentTime = 0; 
-                    mVid.src = ''; 
+                if (mVid) {
+                    mVid.pause();
+                    mVid.currentTime = 0;
+                    mVid.src = '';
                     mVid.removeAttribute('src');
                     mVid.load();
                 }
@@ -3056,29 +3042,29 @@
 
             // Attach click handlers to all view buttons
             document.querySelectorAll('.btn-view').forEach(function (btn) {
-                btn.addEventListener('click', function (e) { 
-                    e.stopPropagation(); 
-                    var card = btn.closest('.project-card'); 
-                    if (card) openModal(card); 
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var card = btn.closest('.project-card');
+                    if (card) openModal(card);
                 });
             });
 
             var closeBtn = document.getElementById('modal-close');
             if (closeBtn) closeBtn.addEventListener('click', closeModal);
-            
-            if (overlay) overlay.addEventListener('click', function (e) { 
-                if (e.target === overlay) closeModal(); 
+
+            if (overlay) overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeModal();
             });
-            
-            document.addEventListener('keydown', function (e) { 
-                if (e.key === 'Escape') closeModal(); 
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeModal();
             });
 
             // Tab switching
             document.querySelectorAll('.modal-tab').forEach(function (t) {
                 t.addEventListener('click', function () {
-                    document.querySelectorAll('.modal-tab').forEach(function (tab) { 
-                        tab.classList.toggle('active', tab === t); 
+                    document.querySelectorAll('.modal-tab').forEach(function (tab) {
+                        tab.classList.toggle('active', tab === t);
                     });
                     if (tabPlayer) tabPlayer.style.display = t.dataset.tab === 'player' ? 'block' : 'none';
                     if (tabInfo) tabInfo.style.display = t.dataset.tab === 'info' ? 'block' : 'none';
@@ -3090,13 +3076,13 @@
                 mVid.addEventListener('timeupdate', updateTime);
                 mVid.addEventListener('play', updatePlayButton);
                 mVid.addEventListener('pause', updatePlayButton);
-                mVid.addEventListener('ended', function () { 
-                    if (cPlay) cPlay.textContent = '▶'; 
+                mVid.addEventListener('ended', function () {
+                    if (cPlay) cPlay.textContent = '▶';
                     mVid.currentTime = 0;
                 });
-                
+
                 // Handle video errors
-                mVid.addEventListener('error', function(e) {
+                mVid.addEventListener('error', function (e) {
                     console.log("Video error:", e);
                     if (noMedia) {
                         noMedia.style.display = 'flex';
@@ -3106,69 +3092,69 @@
             }
 
             // Control buttons
-            if (cPlay) cPlay.addEventListener('click', function () { 
-                if (mVid) { 
+            if (cPlay) cPlay.addEventListener('click', function () {
+                if (mVid) {
                     if (mVid.paused) {
-                        mVid.play().catch(function(error) {
+                        mVid.play().catch(function (error) {
                             console.log("Play failed:", error);
                         });
-                    } else { 
-                        mVid.pause(); 
+                    } else {
+                        mVid.pause();
                     }
-                } 
+                }
             });
-            
-            if (cRw) cRw.addEventListener('click', function () { 
-                if (mVid) mVid.currentTime = Math.max(0, mVid.currentTime - 10); 
+
+            if (cRw) cRw.addEventListener('click', function () {
+                if (mVid) mVid.currentTime = Math.max(0, mVid.currentTime - 10);
             });
-            
-            if (cFf) cFf.addEventListener('click', function () { 
-                if (mVid) mVid.currentTime = Math.min(mVid.duration || 0, mVid.currentTime + 10); 
+
+            if (cFf) cFf.addEventListener('click', function () {
+                if (mVid) mVid.currentTime = Math.min(mVid.duration || 0, mVid.currentTime + 10);
             });
-            
-            if (cMute) cMute.addEventListener('click', function () { 
-                if (mVid) { 
-                    mVid.muted = !mVid.muted; 
-                    cMute.textContent = mVid.muted ? '🔇' : '🔊'; 
-                } 
+
+            if (cMute) cMute.addEventListener('click', function () {
+                if (mVid) {
+                    mVid.muted = !mVid.muted;
+                    cMute.textContent = mVid.muted ? '🔇' : '🔊';
+                }
             });
-            
-            if (cVol) cVol.addEventListener('input', function () { 
-                if (mVid) { 
-                    mVid.volume = parseFloat(this.value); 
-                    mVid.muted = false; 
-                    if (cMute) cMute.textContent = '🔊'; 
-                } 
+
+            if (cVol) cVol.addEventListener('input', function () {
+                if (mVid) {
+                    mVid.volume = parseFloat(this.value);
+                    mVid.muted = false;
+                    if (cMute) cMute.textContent = '🔊';
+                }
             });
-            
-            if (cFs) cFs.addEventListener('click', function () { 
-                var screen = document.getElementById('modal-screen'); 
-                if (screen && screen.requestFullscreen) screen.requestFullscreen(); 
+
+            if (cFs) cFs.addEventListener('click', function () {
+                var screen = document.getElementById('modal-screen');
+                if (screen && screen.requestFullscreen) screen.requestFullscreen();
             });
 
             // Seek bar
             if (cBar) {
                 var seeking = false;
-                
-                function seekHandler(e) { 
-                    if (!mVid || !mVid.duration) return; 
-                    var rect = cBar.getBoundingClientRect(); 
-                    var pos = (e.clientX - rect.left) / rect.width; 
-                    pos = Math.max(0, Math.min(1, pos)); 
-                    mVid.currentTime = pos * mVid.duration; 
+
+                function seekHandler(e) {
+                    if (!mVid || !mVid.duration) return;
+                    var rect = cBar.getBoundingClientRect();
+                    var pos = (e.clientX - rect.left) / rect.width;
+                    pos = Math.max(0, Math.min(1, pos));
+                    mVid.currentTime = pos * mVid.duration;
                 }
-                
-                cBar.addEventListener('mousedown', function (e) { 
-                    seeking = true; 
-                    seekHandler(e); 
+
+                cBar.addEventListener('mousedown', function (e) {
+                    seeking = true;
+                    seekHandler(e);
                 });
-                
-                document.addEventListener('mousemove', function (e) { 
-                    if (seeking) seekHandler(e); 
+
+                document.addEventListener('mousemove', function (e) {
+                    if (seeking) seekHandler(e);
                 });
-                
-                document.addEventListener('mouseup', function () { 
-                    seeking = false; 
+
+                document.addEventListener('mouseup', function () {
+                    seeking = false;
                 });
             }
         })();

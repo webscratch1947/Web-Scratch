@@ -2162,14 +2162,6 @@
                 align-items: flex-start
             }
 
-            .footer-copy {
-                color: rgba(200, 232, 240, .65)
-            }
-
-            .footer-links a {
-                color: rgba(200, 232, 240, .75)
-            }
-
             /* Make modal better on mobile */
             .modal-box {
                 width: 96vw;
@@ -2345,7 +2337,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-lottie-wrap">
-                        <div id="coding-svg-wrap" style="width:560px;height:560px;display:flex;align-items:center;justify-content:center;"></div>
+                        <div id="coding-svg-wrap" style="width:420px;height:420px;display:flex;align-items:center;justify-content:center;"></div>
                     </div>
                 </div>
             </div>
@@ -2901,9 +2893,7 @@
                                 required></textarea>
                         </div>
 
-                        <div id="submit-btn" style="cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;">
-                            <div id="book-svg-wrap" style="width:100%;max-width:420px;aspect-ratio:512/77;pointer-events:none;"></div>
-                        </div>
+                        <button type="button" id="submit-btn" class="btn-submit">SEND MESSAGE →</button>
                         <div class="form-error" id="form-error" style="display:none;color:#ff4d6d;margin-top:10px;font-size:0.85rem;letter-spacing:0.05em;text-align:center;">⚠ Please fill all the information first</div>
 
                         <div class="form-success" id="form-success">✓ MESSAGE SENT — WE'LL BE IN TOUCH WITHIN 24 HOURS
@@ -2918,9 +2908,9 @@
                 <div class="footer-brand"><img src="Web Scratch Logo.png" alt="Web Scratch">
                     <div class="footer-brand-text">WEB<span>SCRATCH</span></div>
                 </div>
+                <div class="footer-copy">© 2026 WEB SCRATCH</div>
                 <div class="footer-links"><a href="#hero">HOME</a><a href="#services">SERVICES</a><a
-                        href="#projects">WORK</a><a href="#social">SOCIAL</a><a href="#contact">CONTACT</a></div>
-                <div class="footer-copy">COPYRIGHT © 2026 WEB SCRATCH</div>
+                        href="#projects">WORK</a><a href="#social">SOCIAL MEDIA</a><a href="#contact">CONTACT</a></div>
             </div>
         </footer>
     </div>
@@ -3027,17 +3017,6 @@
                 }).catch(function () {});
             })();
 
-            // ── Inject book.svg into send button (fetch → innerHTML) ──
-            (function () {
-                var wrap = document.getElementById('book-svg-wrap');
-                if (!wrap) return;
-                fetch('book.svg').then(function (r) { return r.text(); }).then(function (txt) {
-                    wrap.innerHTML = txt;
-                    var svg = wrap.querySelector('svg');
-                    if (svg) { svg.setAttribute('viewBox', '0 0 512 77'); svg.style.width = '100%'; svg.style.height = '100%'; }
-                }).catch(function () {});
-            })();
-
             // ── Contact form — validation + submit ──
             var contactForm = document.getElementById('contact-form');
             var submitBtn = document.getElementById('submit-btn');
@@ -3060,16 +3039,6 @@
                         formError.textContent = '⚠ Please fill all the information first';
                         formError.style.display = 'block';
                         return;
-                    }
-
-                    // Re-inject book.svg to restart animation from frame 0
-                    var bookWrap = document.getElementById('book-svg-wrap');
-                    if (bookWrap) {
-                        fetch('book.svg').then(function (r) { return r.text(); }).then(function (txt) {
-                            bookWrap.innerHTML = txt;
-                            var svg = bookWrap.querySelector('svg');
-                            if (svg) { svg.setAttribute('viewBox', '0 0 512 77'); svg.style.width = '100%'; svg.style.height = '100%'; }
-                        }).catch(function () {});
                     }
 
                     submitBtn.style.pointerEvents = 'none';

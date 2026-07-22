@@ -2192,7 +2192,6 @@
             }
         }
     </style>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
     <style>
         .hero-lottie-wrap {
             display: flex;
@@ -2338,12 +2337,7 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-lottie-wrap">
-                        <lottie-player
-                            src="coding.svg"
-                            autoplay
-                            loop
-                            style="width:420px;height:420px;">
-                        </lottie-player>
+                        <div id="coding-svg-wrap" style="width:420px;height:420px;display:flex;align-items:center;justify-content:center;"></div>
                     </div>
                 </div>
             </div>
@@ -2900,13 +2894,7 @@
                         </div>
 
                         <div id="submit-btn" style="cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;">
-                            <lottie-player
-                                id="book-lottie"
-                                src="book.svg"
-                                autoplay
-                                loop
-                                style="width:120px;height:120px;pointer-events:none;">
-                            </lottie-player>
+                            <div id="book-svg-wrap" style="width:120px;height:120px;pointer-events:none;"></div>
                         </div>
                         <div class="form-error" id="form-error" style="display:none;color:#ff4d6d;margin-top:10px;font-size:0.85rem;letter-spacing:0.05em;text-align:center;">⚠ Please fill all the information first</div>
 
@@ -3020,10 +3008,31 @@
             var heroWork = document.getElementById('hero-work');
             if (heroWork) heroWork.onclick = function () { document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }); };
 
-            // CONTACT FORM — book.svg lottie + validation
+            // ── Inject coding.svg into hero (fetch → innerHTML, same as Rent Nivas) ──
+            (function () {
+                var wrap = document.getElementById('coding-svg-wrap');
+                if (!wrap) return;
+                fetch('coding.svg').then(function (r) { return r.text(); }).then(function (txt) {
+                    wrap.innerHTML = txt;
+                    var svg = wrap.querySelector('svg');
+                    if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+                }).catch(function () {});
+            })();
+
+            // ── Inject book.svg into send button (fetch → innerHTML) ──
+            (function () {
+                var wrap = document.getElementById('book-svg-wrap');
+                if (!wrap) return;
+                fetch('book.svg').then(function (r) { return r.text(); }).then(function (txt) {
+                    wrap.innerHTML = txt;
+                    var svg = wrap.querySelector('svg');
+                    if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+                }).catch(function () {});
+            })();
+
+            // ── Contact form — validation + submit ──
             var contactForm = document.getElementById('contact-form');
             var submitBtn = document.getElementById('submit-btn');
-            var bookLottie = document.getElementById('book-lottie');
             var formError = document.getElementById('form-error');
             var formSuccess = document.getElementById('form-success');
 
@@ -3045,14 +3054,18 @@
                         return;
                     }
 
-                    // Valid — replay book animation for emphasis
-                    if (bookLottie) {
-                        bookLottie.stop();
-                        bookLottie.play();
+                    // Re-inject book.svg to restart animation from frame 0
+                    var bookWrap = document.getElementById('book-svg-wrap');
+                    if (bookWrap) {
+                        fetch('book.svg').then(function (r) { return r.text(); }).then(function (txt) {
+                            bookWrap.innerHTML = txt;
+                            var svg = bookWrap.querySelector('svg');
+                            if (svg) { svg.style.width = '100%'; svg.style.height = '100%'; }
+                        }).catch(function () {});
                     }
 
                     submitBtn.style.pointerEvents = 'none';
-                    submitBtn.style.opacity = '0.6';
+                    submitBtn.style.opacity = '0.5';
 
                     var formData = new FormData(contactForm);
                     fetch('https://api.web3forms.com/submit', {

@@ -2192,7 +2192,7 @@
             }
         }
     </style>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
     <style>
         .hero-lottie-wrap {
             display: flex;
@@ -2338,12 +2338,12 @@
                 </div>
                 <div class="hero-visual">
                     <div class="hero-lottie-wrap">
-                        <dotlottie-player
+                        <lottie-player
                             src="coding.svg"
                             autoplay
                             loop
                             style="width:420px;height:420px;">
-                        </dotlottie-player>
+                        </lottie-player>
                     </div>
                 </div>
             </div>
@@ -2899,17 +2899,16 @@
                                 required></textarea>
                         </div>
 
-                        <button type="button" class="btn-submit" id="submit-btn" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:0 24px;">
-                            <dotlottie-player
+                        <div id="submit-btn" style="cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;">
+                            <lottie-player
                                 id="book-lottie"
                                 src="book.svg"
                                 autoplay
                                 loop
-                                style="width:48px;height:48px;pointer-events:none;">
-                            </dotlottie-player>
-                            <span>SEND MESSAGE</span>
-                        </button>
-                        <div class="form-error" id="form-error" style="display:none;color:#ff4d6d;margin-top:10px;font-size:0.85rem;letter-spacing:0.05em;">⚠ Please fill all the information first</div>
+                                style="width:120px;height:120px;pointer-events:none;">
+                            </lottie-player>
+                        </div>
+                        <div class="form-error" id="form-error" style="display:none;color:#ff4d6d;margin-top:10px;font-size:0.85rem;letter-spacing:0.05em;text-align:center;">⚠ Please fill all the information first</div>
 
                         <div class="form-success" id="form-success">✓ MESSAGE SENT — WE'LL BE IN TOUCH WITHIN 24 HOURS
                         </div>
@@ -3052,9 +3051,8 @@
                         bookLottie.play();
                     }
 
-                    submitBtn.disabled = true;
-                    var btnSpan = submitBtn.querySelector('span');
-                    if (btnSpan) btnSpan.textContent = 'SENDING...';
+                    submitBtn.style.pointerEvents = 'none';
+                    submitBtn.style.opacity = '0.6';
 
                     var formData = new FormData(contactForm);
                     fetch('https://api.web3forms.com/submit', {
@@ -3063,8 +3061,8 @@
                     }).then(function (res) {
                         return res.json();
                     }).then(function (data) {
-                        submitBtn.disabled = false;
-                        if (btnSpan) btnSpan.textContent = 'SEND MESSAGE';
+                        submitBtn.style.pointerEvents = '';
+                        submitBtn.style.opacity = '';
                         if (data.success) {
                             if (formSuccess) formSuccess.classList.add('show');
                             contactForm.reset();
@@ -3076,8 +3074,8 @@
                             formError.style.display = 'block';
                         }
                     }).catch(function () {
-                        submitBtn.disabled = false;
-                        if (btnSpan) btnSpan.textContent = 'SEND MESSAGE';
+                        submitBtn.style.pointerEvents = '';
+                        submitBtn.style.opacity = '';
                         formError.textContent = '⚠ Network error. Please try again.';
                         formError.style.display = 'block';
                     });

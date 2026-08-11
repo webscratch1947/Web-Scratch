@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Web Scratch | AI Digital Agency</title>
+    <title>WebScratch | Digital Products · AI · Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" href="/favicon.png">
     <link
@@ -859,6 +859,16 @@
             box-shadow: 0 0 10px var(--cyan)
         }
 
+        .section-sub {
+            font-size: 0.95rem;
+            color: rgba(200,232,240,0.55);
+            margin-top: 16px;
+            letter-spacing: 0.5px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -1614,6 +1624,32 @@
             letter-spacing: 2px;
         }
 
+        .modal-visit-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, var(--cyan), var(--electric));
+            border: none;
+            color: var(--dark);
+            padding: 14px 32px;
+            clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+            transition: all .3s;
+            text-transform: uppercase;
+            box-shadow: 0 0 25px rgba(0, 245, 255, 0.4);
+            text-decoration: none;
+            margin-top: 28px;
+            cursor: pointer;
+        }
+
+        .modal-visit-btn:hover {
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
         /* TESTIMONIALS */
         #testimonials {
             background: var(--dark)
@@ -2198,6 +2234,168 @@
             align-items: center;
             justify-content: center;
         }
+
+        .hero-location-line {
+            margin-top: 22px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.72rem;
+            color: rgba(200, 232, 240, 0.45);
+            letter-spacing: 1.5px;
+        }
+
+        /* CAPABILITY STRIP */
+        .capability-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cap-item {
+            flex: 1 1 160px;
+            padding: 32px 20px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+            position: relative;
+            transition: background .3s;
+        }
+
+        .cap-item:last-child { border-right: none; }
+
+        .cap-item:hover { background: rgba(0,245,255,0.04); }
+
+        .cap-num {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--magenta);
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .cap-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--cyan);
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .cap-sub {
+            font-size: 0.75rem;
+            color: rgba(200,232,240,0.5);
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .capabilities-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cap-group {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 28px 24px;
+            clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+        }
+
+        .cap-group-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--magenta);
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .cap-group-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cap-tag {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            padding: 5px 12px;
+            border: 1px solid rgba(0,245,255,0.25);
+            color: var(--cyan);
+            background: rgba(0,245,255,0.05);
+            letter-spacing: 1px;
+            transition: all .2s;
+        }
+
+        .cap-tag:hover {
+            border-color: var(--cyan);
+            background: rgba(0,245,255,0.12);
+        }
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            border-bottom: 1px solid var(--border);
+            max-height: 320px;
+        }
+
+        .modal-thumb-frame img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.88) saturate(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .modal-thumb-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .modal-thumb-scanline {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 3px,
+                rgba(0,0,0,0.07) 3px,
+                rgba(0,0,0,0.07) 4px
+            );
+        }
+
+        .modal-thumb-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,245,255,0.04) 0%,
+                transparent 30%,
+                transparent 65%,
+                rgba(0,0,0,0.6) 100%
+            );
+        }
+
+        .modal-thumb-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            z-index: 4;
+        }
+
+        .modal-thumb-corner.tl { top: 10px; left: 10px; border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan); box-shadow: -4px -4px 10px rgba(0,245,255,0.35); }
+        .modal-thumb-corner.tr { top: 10px; right: 10px; border-top: 2px solid var(--cyan); border-right: 2px solid var(--cyan); box-shadow: 4px -4px 10px rgba(0,245,255,0.35); }
+        .modal-thumb-corner.bl { bottom: 10px; left: 10px; border-bottom: 2px solid var(--magenta); border-left: 2px solid var(--magenta); box-shadow: -4px 4px 10px rgba(255,0,170,0.35); }
+        .modal-thumb-corner.br { bottom: 10px; right: 10px; border-bottom: 2px solid var(--magenta); border-right: 2px solid var(--magenta); box-shadow: 4px 4px 10px rgba(255,0,170,0.35); }
     </style>
 </head>
 
@@ -2230,49 +2428,30 @@
         </div>
     </div>
 
-    <!-- MODAL - VIDEO PLAYER -->
+    <!-- MODAL -->
     <div id="modal-overlay">
         <div class="modal-box">
             <div class="modal-header">
-                <div class="modal-header-title">// PROJECT VIEWER</div>
+                <div class="modal-header-title">// PROJECT DETAILS</div>
                 <button class="modal-close" id="modal-close">✕</button>
             </div>
-            <div class="modal-tabs">
-                <button class="modal-tab active" data-tab="player">▶ VIDEO</button>
-                <button class="modal-tab" data-tab="info">◈ INFO</button>
-            </div>
-            <div id="tab-player">
-                <div class="modal-screen" id="modal-screen">
-                    <div class="modal-no-media" id="modal-no-media" style="display: flex;">
-                        <span>🎬</span>
-                        <div>// NO VIDEO //</div>
-                        <div style="font-size:0.7rem; opacity:0.6">add data-video="your-file.mp4" to project card</div>
-                    </div>
-                    <video id="modal-video" preload="auto" style="display:none; width:100%;" controlslist="nodownload"
-                        playsinline></video>
-                </div>
-                <div class="modal-controls" id="modal-controls" style="display: none;">
-                    <div class="ctrl-bar" id="ctrl-bar">
-                        <div class="ctrl-fill" id="ctrl-fill"></div>
-                        <div class="ctrl-thumb" id="ctrl-thumb"></div>
-                    </div>
-                    <div class="ctrl-row">
-                        <button class="ctrl-btn" id="ctrl-play">▶</button>
-                        <button class="ctrl-btn" id="ctrl-rw">⏪</button>
-                        <button class="ctrl-btn" id="ctrl-ff">⏩</button>
-                        <span class="ctrl-time" id="ctrl-time">0:00 / 0:00</span>
-                        <button class="ctrl-btn" id="ctrl-mute">🔊</button>
-                        <input type="range" class="ctrl-vol" id="ctrl-vol" min="0" max="1" step=".05" value="1">
-                        <div class="ctrl-spacer"></div>
-                        <button class="ctrl-btn" id="ctrl-fs">⛶</button>
+            <div id="tab-info">
+                <!-- Thumbnail for top-3 projects -->
+                <div id="modal-thumb-wrap" style="display:none;">
+                    <div class="modal-thumb-frame">
+                        <div class="modal-thumb-scanline"></div>
+                        <img id="modal-thumb-img" src="" alt="" />
+                        <div class="modal-thumb-corner tl"></div>
+                        <div class="modal-thumb-corner tr"></div>
+                        <div class="modal-thumb-corner bl"></div>
+                        <div class="modal-thumb-corner br"></div>
                     </div>
                 </div>
-            </div>
-            <div id="tab-info" style="display:none;">
                 <div class="modal-info">
                     <div class="modal-info-name" id="modal-proj-name"></div>
                     <div class="modal-info-desc" id="modal-proj-desc"></div>
                     <div class="modal-info-tags" id="modal-proj-tags"></div>
+                    <div id="modal-visit-wrap"></div>
                 </div>
             </div>
         </div>
@@ -2291,49 +2470,28 @@
                 <div class="nav-brand-text"><span class="web">WEB</span><span class="scratch">SCRATCH</span></div>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#hero">HOME</a></li>
                 <li><a href="#services">SERVICES</a></li>
-                <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#projects">WORK</a></li>
-                <li><a href="#social">SOCIAL MEDIA</a></li>
+                <li><a href="#about">ABOUT</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
-            <button class="nav-cta" id="nav-hire">HIRE US</button>
+            <button class="nav-cta" id="nav-hire">START A PROJECT</button>
         </nav>
 
         <!-- HERO SECTION -->
         <section id="hero">
             <div class="hero-grid">
                 <div>
-                    <div class="hero-tag">FOUNDER &amp; AI ARCHITECT</div>
+                    <div class="hero-tag">DIGITAL PRODUCTS · AI · DESIGN</div>
                     <h1 class="hero-name"><span class="glitch" data-text="WEB SCRATCH">WEB SCRATCH</span></h1>
-                    <div class="hero-role">// AI Digital Agency</div>
-                    <p class="hero-desc">We don't just build websites — we deploy intelligent digital ecosystems. From
-                        AI-agentic automation pipelines and cinematic 3D product visuals to blazing-fast web and mobile
-                        apps, Web Scratch engineers the future of your brand — autonomously, precisely, relentlessly.
-                    </p>
+                    <div class="hero-role">Digital products, AI systems &amp; creative technology — built around your business.</div>
+                    <p class="hero-desc">We design and build websites, applications, AI automation and digital experiences for businesses, startups and organizations.</p>
                     <div class="hero-btns">
-                        <button class="btn-primary" id="hero-services">EXPLORE SERVICES</button>
-                        <button class="btn-secondary" id="hero-work">VIEW WORK</button>
+                        <button class="btn-primary" id="hero-services">START A PROJECT</button>
+                        <button class="btn-secondary" id="hero-work">PARTNER WITH US</button>
                     </div>
-                    <div class="hero-stats">
-                        <div>
-                            <div class="stat-num" data-target="50">0</div>
-                            <div class="stat-label">PROJECTS</div>
-                        </div>
-                        <div>
-                            <div class="stat-num" data-target="30">0</div>
-                            <div class="stat-label">CLIENTS</div>
-                        </div>
-                        <div>
-                            <div class="stat-num" data-target="6">0</div>
-                            <div class="stat-label">SERVICES</div>
-                        </div>
-                        <div>
-                            <div class="stat-num" data-target="100">0</div>
-                            <div class="stat-label">% DEDICATED</div>
-                        </div>
-                    </div>
+                    <div class="hero-location-line">Based in India · Working with clients and partners internationally</div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-lottie-wrap">
@@ -2343,43 +2501,72 @@
             </div>
         </section>
 
+        <!-- CAPABILITY STRIP -->
+        <div class="capability-strip">
+            <div class="cap-item">
+                <div class="cap-num">01 —</div>
+                <div class="cap-title">WEB &amp; DIGITAL<br>PRODUCTS</div>
+                <div class="cap-sub">Websites · Apps · Platforms</div>
+            </div>
+            <div class="cap-item">
+                <div class="cap-num">02 —</div>
+                <div class="cap-title">AI &amp;<br>AUTOMATION</div>
+                <div class="cap-sub">Chatbots · Workflows · Voice AI</div>
+            </div>
+            <div class="cap-item">
+                <div class="cap-num">03 —</div>
+                <div class="cap-title">MOBILE<br>APPLICATIONS</div>
+                <div class="cap-sub">iOS · Android · Cross-platform</div>
+            </div>
+            <div class="cap-item">
+                <div class="cap-num">04 —</div>
+                <div class="cap-title">UI/UX &amp; PRODUCT<br>DESIGN</div>
+                <div class="cap-sub">Design · Prototypes · Systems</div>
+            </div>
+            <div class="cap-item">
+                <div class="cap-num">05 —</div>
+                <div class="cap-title">BRAND &amp;<br>CREATIVE</div>
+                <div class="cap-sub">Identity · 3D Video · Graphics</div>
+            </div>
+            <div class="cap-item">
+                <div class="cap-num">06 —</div>
+                <div class="cap-title">DIGITAL<br>GROWTH</div>
+                <div class="cap-sub">Social · SEO · Marketing</div>
+            </div>
+        </div>
+
         <!-- ABOUT SECTION -->
         <section id="about">
             <div class="section-header reveal">
                 <div class="section-tag">// WHO WE ARE</div>
-                <h2 class="section-title">ABOUT <span>US</span></h2>
+                <h2 class="section-title">WHAT IS <span>WEBSCRATCH?</span></h2>
                 <div class="section-line"></div>
             </div>
             <div class="about-grid">
                 <div class="about-card reveal">
                     <div class="about-label">// OUR IDENTITY</div>
                     <div class="about-name-big">WEB SCRATCH</div>
-                    <div class="about-role-big">Digital Agency</div>
-                    <p class="about-bio">We are Web Scratch — a creative tech agency built to operate at the
-                        intersection of intelligence and design. Our systems think, act, and iterate autonomously so
-                        your business runs faster, smarter, and 24/7 without friction. From AI pipelines that
-                        work while you sleep, to cinematic brand experiences that stop the scroll — we engineer digital
-                        dominance for brands that refuse to be ordinary.</p>
+                    <div class="about-role-big">Digital Products · AI · Design</div>
+                    <p class="about-bio">WebScratch is a digital technology and creative company that helps businesses turn ideas, requirements and challenges into practical digital solutions. We combine technology, AI and design to build websites, applications, automation systems, digital experiences and creative assets.</p>
+                    <p class="about-bio" style="margin-top:12px; opacity:0.7;">We work with businesses, startups, organizations and agencies looking for a capable technology and creative partner.</p>
                     <div class="about-badges">
-                        <span class="badge">AI AUTOMATION / CALLING AGENT</span><span class="badge">WEBSITE
-                            DEVELOPMENT</span>
-                        <span class="badge">APP DEVELOPMENT</span><span class="badge">3D VIDEO</span><span
-                            class="badge">GRAPHIC DESIGNING</span>
+                        <span class="badge">WEBSITE DEVELOPMENT</span>
+                        <span class="badge">AI AUTOMATION</span>
+                        <span class="badge">APP DEVELOPMENT</span>
+                        <span class="badge">WHATSAPP AUTOMATION</span>
+                        <span class="badge">AI CALLING AGENT</span>
+                        <span class="badge">3D VIDEO</span>
+                        <span class="badge">GRAPHIC DESIGN</span>
                     </div>
                 </div>
                 <div class="reveal">
                     <ul class="about-info-list">
-                        <li><span class="info-key">// AGENCY</span><span class="info-val">Web Scratch — Full-Service AI Digital Agency</span></li>
-                        <li><span class="info-key">// FOUNDED BY</span><span class="info-val">Niranjan — Founder &amp;
-                                Ceo Tulasi</span></li>
-                        <li><span class="info-key">// CORE FOCUS</span><span class="info-val">AI Automation · WhatsApp Automation · AI Calling Agent · Website Development · Apps Development · 3D Brand Video's · Graphic Designing · Social Media Management</span></li>
-                        <li><span class="info-key">// AI EDGE</span><span class="info-val">AI workflows that capture leads, follow up, onboard clients, and report — fully autonomous, 24/7</span></li>
-                        <li><span class="info-key">// PHILOSOPHY</span><span class="info-val">Build once. Automate
-                                forever. Dominate your market.</span></li>
-                        <li><span class="info-key">// LOCATION</span><span class="info-val">India · Working with clients
-                                worldwide</span></li>
-                        <li><span class="info-key">// STATUS</span><span class="info-val" style="color:var(--cyan)">⬤
-                                Actively Taking Projects</span></li>
+                        <li><span class="info-key">// COMPANY</span><span class="info-val">WebScratch — Digital Products, AI &amp; Design</span></li>
+                        <li><span class="info-key">// FOUNDED BY</span><span class="info-val">Tulasi Mosuru &amp; Niranjan Mosuru</span></li>
+                        <li><span class="info-key">// CORE FOCUS</span><span class="info-val">Website Development · App Development · AI Automation · WhatsApp Automation · AI Calling Agent · UI/UX Design · 3D Brand Videos · Graphic Design · Social Media</span></li>
+                        <li><span class="info-key">// WHO WE WORK WITH</span><span class="info-val">Businesses · Startups · Organizations · Agencies &amp; Partners</span></li>
+                        <li><span class="info-key">// LOCATION</span><span class="info-val">India · Working with clients and partners internationally</span></li>
+                        <li><span class="info-key">// STATUS</span><span class="info-val" style="color:var(--cyan)">⬤ Actively Taking Projects</span></li>
                     </ul>
                 </div>
             </div>
@@ -2393,116 +2580,67 @@
                 <div class="section-line"></div>
             </div>
             <div class="services-grid">
-                <div class="service-card reveal"><span class="service-icon">🌐</span>
-                    <div class="service-num">01 //</div>
-                    <div class="service-title">WEBSITE DEVELOPMENT</div>
-                    <p class="service-desc">Lightning-fast, pixel-perfect websites engineered with modern stacks.</p>
-                    <div class="s-tag-row"><span class="s-tag">HTML</span><span class="s-tag">CSS</span><span
-                            class="s-tag">JAVASCRIPT</span></div>
+                <div class="service-card reveal">
+                    <span class="service-icon">🌐</span>
+                    <div class="service-num">01 — BUILD</div>
+                    <div class="service-title">DIGITAL PRODUCTS &amp; DEVELOPMENT</div>
+                    <p class="service-desc">We design and build websites, web applications, mobile apps and custom digital products from the ground up.</p>
+                    <div class="s-tag-row"><span class="s-tag">WEBSITE DEVELOPMENT</span><span class="s-tag">WEB APPS</span><span class="s-tag">MOBILE APPS</span><span class="s-tag">CUSTOM PRODUCTS</span></div>
                 </div>
-                <div class="service-card reveal"><span class="service-icon">📱</span>
-                    <div class="service-num">02 //</div>
-                    <div class="service-title">APP DEVELOPMENT</div>
-                    <p class="service-desc">Native and cross-platform mobile apps engineered for raw performance.</p>
-                    <div class="s-tag-row"><span class="s-tag">HTML</span><span class="s-tag">CSS
-                            NATIVE</span><span class="s-tag">JAVASCRIPT</span></div>
+                <div class="service-card reveal">
+                    <span class="service-icon">🤖</span>
+                    <div class="service-num">02 — AUTOMATE</div>
+                    <div class="service-title">AI &amp; AUTOMATION</div>
+                    <p class="service-desc">We build AI chatbots, calling agents, WhatsApp automation and workflow systems that run your business processes 24/7.</p>
+                    <div class="s-tag-row"><span class="s-tag">AI CHATBOTS</span><span class="s-tag">AI CALLING AGENTS</span><span class="s-tag">WHATSAPP AUTOMATION</span><span class="s-tag">WORKFLOW AUTOMATION</span></div>
                 </div>
-                <div class="service-card reveal"><span class="service-icon">📣</span>
-                    <div class="service-num">03 //</div>
-                    <div class="service-title">SOCIAL MEDIA MANAGEMENT</div>
-                    <p class="service-desc">Strategic content, growth hacking, and managing.</p>
-                    <div class="s-tag-row"><span class="s-tag">POSTING</span><span class="s-tag">CONTENT</span><span
-                            class="s-tag">ANALYTICS</span></div>
+                <div class="service-card reveal">
+                    <span class="service-icon">🎨</span>
+                    <div class="service-num">03 — CREATE</div>
+                    <div class="service-title">DESIGN &amp; CREATIVE</div>
+                    <p class="service-desc">UI/UX design, brand identity, graphic design, presentation design and cinematic 3D product visuals.</p>
+                    <div class="s-tag-row"><span class="s-tag">UI/UX DESIGN</span><span class="s-tag">BRAND IDENTITY</span><span class="s-tag">GRAPHIC DESIGN</span><span class="s-tag">3D PRODUCT VISUALS</span></div>
                 </div>
-                <div class="service-card reveal"><span class="service-icon">🎨</span>
-                    <div class="service-num">04 //</div>
-                    <div class="service-title">GRAPHIC DESIGNING</div>
-                    <p class="service-desc">Brand identities, UI kits, marketing collateral that speaks louder than
-                        words.</p>
-                    <div class="s-tag-row"><span class="s-tag">BRANDING</span><span class="s-tag">POSTERS</span><span
-                            class="s-tag">THUMBNAIL DESIGNING</span></div>
-                </div>
-                <div class="service-card reveal"><span class="service-icon">🎬</span>
-                    <div class="service-num">05 //</div>
-                    <div class="service-title">3D PRODUCT VIDEOS</div>
-                    <p class="service-desc">Cinematic 3D animated product visualizations that stop the scroll dead.</p>
-                    <div class="s-tag-row"><span class="s-tag">PRODUCT VIDEO'S</span><span class="s-tag">4K
-                            QUALITY</span><span class="s-tag">CINEMATIC</span></div>
-                </div>
-                <div class="service-card reveal"><span class="service-icon">🤖</span>
-                    <div class="service-num">06 //</div>
-                    <div class="service-title">AI AUTOMATIONS</div>
-                    <p class="service-desc">Fully agentic AI workflows that think, decide, and act autonomously.</p>
-                    <div class="s-tag-row"><span class="s-tag">MAKE.COM</span><span class="s-tag">CALLING
-                            AGENT</span><span class="s-tag">N8N</span></div>
+                <div class="service-card reveal">
+                    <span class="service-icon">📈</span>
+                    <div class="service-num">04 — GROW</div>
+                    <div class="service-title">DIGITAL GROWTH</div>
+                    <p class="service-desc">Social media management, Google Business Profile, basic SEO and digital marketing assets to grow your presence.</p>
+                    <div class="s-tag-row"><span class="s-tag">SOCIAL MEDIA</span><span class="s-tag">GOOGLE BUSINESS</span><span class="s-tag">SEO</span><span class="s-tag">DIGITAL MARKETING</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS SECTION -->
+        <!-- CAPABILITIES SECTION -->
         <section id="skills">
             <div class="section-header reveal">
-                <div class="section-tag">// TECH ARSENAL</div>
-                <h2 class="section-title">OUR <span>SKILLS</span></h2>
+                <div class="section-tag">// WHAT WE USE</div>
+                <h2 class="section-title">OUR <span>CAPABILITIES</span></h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-wrap">
-                <div class="skills-grid">
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">WEB DEVELOPMENT</span><span
-                                class="skill-pct">95%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="95"></div>
-                        </div>
+            <div class="capabilities-wrap">
+                <div class="cap-group reveal">
+                    <div class="cap-group-title">TECHNOLOGY</div>
+                    <div class="cap-group-tags">
+                        <span class="cap-tag">React</span><span class="cap-tag">JavaScript</span><span class="cap-tag">Python</span><span class="cap-tag">Node.js</span><span class="cap-tag">APIs</span><span class="cap-tag">Databases</span><span class="cap-tag">Cloud</span><span class="cap-tag">Deployment</span>
                     </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">APP DEVELOPMENT</span><span
-                                class="skill-pct">88%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="88"></div>
-                        </div>
+                </div>
+                <div class="cap-group reveal">
+                    <div class="cap-group-title">AI &amp; AUTOMATION</div>
+                    <div class="cap-group-tags">
+                        <span class="cap-tag">AI Workflows</span><span class="cap-tag">AI Calling Agents</span><span class="cap-tag">Chatbots</span><span class="cap-tag">WhatsApp Automation</span><span class="cap-tag">Voice AI</span><span class="cap-tag">Make.com</span><span class="cap-tag">n8n</span><span class="cap-tag">API Integrations</span>
                     </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">UI / UX DESIGN</span><span
-                                class="skill-pct">92%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="92"></div>
-                        </div>
+                </div>
+                <div class="cap-group reveal">
+                    <div class="cap-group-title">DESIGN</div>
+                    <div class="cap-group-tags">
+                        <span class="cap-tag">UI/UX</span><span class="cap-tag">Product Design</span><span class="cap-tag">Brand Identity</span><span class="cap-tag">Graphic Design</span><span class="cap-tag">3D Visuals</span><span class="cap-tag">Visual Content</span>
                     </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">3D ANIMATION</span><span
-                                class="skill-pct">85%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="85"></div>
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">AI AUTOMATION</span><span
-                                class="skill-pct">90%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="90"></div>
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">SOCIAL MEDIA</span><span
-                                class="skill-pct">87%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="87"></div>
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">GRAPHIC DESIGN</span><span
-                                class="skill-pct">93%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="93"></div>
-                        </div>
-                    </div>
-                    <div class="reveal">
-                        <div class="skill-header"><span class="skill-name">BRAND STRATEGY</span><span
-                                class="skill-pct">89%</span></div>
-                        <div class="skill-track">
-                            <div class="skill-bar" data-w="89"></div>
-                        </div>
+                </div>
+                <div class="cap-group reveal">
+                    <div class="cap-group-title">GROWTH</div>
+                    <div class="cap-group-tags">
+                        <span class="cap-tag">Google Business</span><span class="cap-tag">Social Media</span><span class="cap-tag">Basic SEO</span><span class="cap-tag">Digital Content</span><span class="cap-tag">Marketing Assets</span>
                     </div>
                 </div>
             </div>
@@ -2519,42 +2657,57 @@
                 <div class="process-step">
                     <div class="step-num">01</div>
                     <div>
-                        <div class="step-label">// DISCOVERY</div>
-                        <div class="step-title">DEEP DIVE & STRATEGY</div>
-                        <p class="step-desc">We map your vision, goals, audience, and competitive landscape with
-                            surgical precision.</p>
+                        <div class="step-label">// UNDERSTAND</div>
+                        <div class="step-title">UNDERSTAND</div>
+                        <p class="step-desc">We understand your business, requirements and goals.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-num">02</div>
                     <div>
-                        <div class="step-label">// DESIGN</div>
-                        <div class="step-title">WIREFRAMES & PROTOTYPES</div>
-                        <p class="step-desc">Our designers craft detailed wireframes and interactive prototypes.</p>
+                        <div class="step-label">// PLAN</div>
+                        <div class="step-title">PLAN</div>
+                        <p class="step-desc">We define the scope, priorities and solution.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-num">03</div>
                     <div>
-                        <div class="step-label">// BUILD</div>
-                        <div class="step-title">DEVELOPMENT & ENGINEERING</div>
-                        <p class="step-desc">Clean, scalable, performance-optimized code built with modern stacks.</p>
+                        <div class="step-label">// DESIGN</div>
+                        <div class="step-title">DESIGN</div>
+                        <p class="step-desc">We create the experience and visual direction.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-num">04</div>
                     <div>
-                        <div class="step-label">// TEST</div>
-                        <div class="step-title">QA & REFINEMENT</div>
-                        <p class="step-desc">Rigorous testing across every device, browser, and edge case.</p>
+                        <div class="step-label">// BUILD</div>
+                        <div class="step-title">BUILD</div>
+                        <p class="step-desc">We develop, integrate and refine the solution.</p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-num">05</div>
                     <div>
+                        <div class="step-label">// TEST</div>
+                        <div class="step-title">TEST</div>
+                        <p class="step-desc">We test the key features and user flows.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">06</div>
+                    <div>
                         <div class="step-label">// LAUNCH</div>
-                        <div class="step-title">DEPLOY, SCALE & SUPPORT</div>
-                        <p class="step-desc">Zero-downtime deployment with proactive post-launch support.</p>
+                        <div class="step-title">LAUNCH</div>
+                        <p class="step-desc">We deploy and help you go live.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">07</div>
+                    <div>
+                        <div class="step-label">// SUPPORT</div>
+                        <div class="step-title">SUPPORT</div>
+                        <p class="step-desc">We remain available for improvements and ongoing support.</p>
                     </div>
                 </div>
             </div>
@@ -2564,15 +2717,16 @@
         <section id="projects">
             <div class="section-header reveal">
                 <div class="section-tag">// OUR WORK</div>
-                <h2 class="section-title">FEATURED <span>PROJECTS</span></h2>
+                <h2 class="section-title">SELECTED <span>WORK</span></h2>
                 <div class="section-line"></div>
+                <p class="section-sub reveal">A selection of digital products, websites and creative projects we've worked on.</p>
             </div>
             <div class="projects-grid">
 
                 <!-- PROJECT 1 -->
                 <div class="project-card reveal" data-title="Civil Website"
                     data-desc="A modern, responsive website for a civil engineering firm."
-                    data-tags="Civil Engineering,HTML,CSS,JavaScript" data-video="https://github.com/webscratch1947/Web-Scratch/raw/main/civil.mp4">
+                    data-tags="Civil Engineering,HTML,CSS,JavaScript" data-thumb="Screenshot (1479).png" data-video="https://media.githubusercontent.com/media/webscratch1947/Web-Scratch/main/civil.mp4">
                     <div class="project-thumb">
                         <img src="Screenshot (1479).png" alt="Civil Website" onerror="this.style.display='none'">
                         <div class="thumb-grid"></div>
@@ -2595,7 +2749,7 @@
                 <!-- PROJECT 2 -->
                 <div class="project-card reveal" data-title="Hotel Website"
                     data-desc="A fully functional hotel website with room booking and gallery."
-                    data-tags="HTML,CSS,JavaScript,Booking" data-video="https://github.com/webscratch1947/Web-Scratch/raw/main/hotel.mp4">
+                    data-tags="HTML,CSS,JavaScript,Booking" data-thumb="Screenshot (1657).png" data-video="https://media.githubusercontent.com/media/webscratch1947/Web-Scratch/main/hotel.mp4">
                     <div class="project-thumb">
                         <img src="Screenshot (1657).png" alt="Hotel Website" onerror="this.style.display='none'">
                         <div class="thumb-grid"></div>
@@ -2618,7 +2772,7 @@
                 <!-- PROJECT 3 -->
                 <div class="project-card reveal" data-title="Dental Clinic Website"
                     data-desc="A modern, responsive website for a dental clinic."
-                    data-tags="HTML,CSS,JavaScript,Healthcare" data-video="https://github.com/webscratch1947/Web-Scratch/raw/main/dentist.mp4">
+                    data-tags="HTML,CSS,JavaScript,Healthcare" data-thumb="Screenshot (1695).png" data-video="https://media.githubusercontent.com/media/webscratch1947/Web-Scratch/main/dentist.mp4">
                     <div class="project-thumb">
                         <img src="Screenshot (1695).png" alt="Dental Clinic Website"
                             onerror="this.style.display='none'">
@@ -2642,7 +2796,7 @@
                 <!-- PROJECT 4 -->
                 <div class="project-card reveal" data-title="MGR ALL IN ONE SERVICES"
                     data-desc="A Premium Website For Home Door Services With Online Booking , Mobile Responsive And Many More Features."
-                    data-tags="HTML,CSS,JavaScript,Menu System">
+                    data-tags="HTML,CSS,JavaScript,Booking,Database" data-thumb="Screenshot (3340).png" data-url="https://mgrallinoneservices.com">
                     <div class="project-thumb">
                         <img src="Screenshot (3340).png" alt="MGR ALL IN ONE SERVICES"
                             onerror="this.style.display='none'">
@@ -2668,7 +2822,7 @@
                 <!-- PROJECT 5 -->
                 <div class="project-card reveal" data-title="Excellent Services"
                     data-desc="A 1 Page Informative Website For Home Door Services With Full Information."
-                    data-tags="HTML,CSS,JavaScript,Listings">
+                    data-tags="HTML,CSS,JavaScript,Informative Website" data-thumb="Screenshot (3341).png" data-url="https://excellentsservices.com/">
                     <div class="project-thumb">
                         <img src="Screenshot (3341).png" alt="Excellent Services" onerror="this.style.display='none'">
                         <div class="thumb-grid"></div>
@@ -2692,7 +2846,7 @@
                 <!-- PROJECT 6 -->
                 <div class="project-card reveal" data-title="Rent Nivas"
                     data-desc="A Rental Website With Advanced Feature's And UI Like Payment , Database , Admin Panel And Many More."
-                    data-tags="HTML,CSS,JavaScript,House Listing & Rentals">
+                    data-tags="HTML,CSS,JavaScript,House Listing & Rentals" data-thumb="Screenshot (3342).png" data-url="https://rentnivas.com">
                     <div class="project-thumb">
                         <img src="Screenshot (3342).png" alt="Rent Nivas" onerror="this.style.display='none'">
                         <div class="thumb-grid"></div>
@@ -2765,29 +2919,29 @@
         <section id="why">
             <div class="section-header reveal">
                 <div class="section-tag">// OUR EDGE</div>
-                <h2 class="section-title">WHY <span>WEB SCRATCH</span></h2>
+                <h2 class="section-title">WHY <span>WEBSCRATCH</span></h2>
                 <div class="section-line"></div>
             </div>
             <div class="why-grid">
-                <div class="why-card reveal"><span class="why-icon">⚡</span>
-                    <div class="why-title">FAST DELIVERY</div>
-                    <p class="why-desc">Most projects delivered in 2–4 weeks. Agentic workflows mean no waiting around.
-                    </p>
+                <div class="why-card reveal"><span class="why-icon">⚙️</span>
+                    <div class="why-title">TECHNOLOGY + DESIGN + AI</div>
+                    <p class="why-desc">Different capabilities working together under one team. You don't need to coordinate multiple agencies.</p>
                 </div>
-                <div class="why-card reveal"><span class="why-icon">🏆</span>
-                    <div class="why-title">PREMIUM QUALITY</div>
-                    <p class="why-desc">Every deliverable crafted to the highest standard. We don't do "good enough".
-                    </p>
+                <div class="why-card reveal"><span class="why-icon">🎯</span>
+                    <div class="why-title">BUILT AROUND YOUR REQUIREMENTS</div>
+                    <p class="why-desc">We don't force every project into the same template. Each solution is shaped around what you actually need.</p>
                 </div>
-                <div class="why-card reveal"><span class="why-icon">🤖</span>
-                    <div class="why-title">AI-FIRST THINKING</div>
-                    <p class="why-desc">Every solution is built with AI at its core — from agentic automations to
-                        AI-assisted design.</p>
+                <div class="why-card reveal"><span class="why-icon">🤝</span>
+                    <div class="why-title">FLEXIBLE COLLABORATION</div>
+                    <p class="why-desc">Work with us directly or through a project and agency partnership. We adapt to how you prefer to work.</p>
                 </div>
-                <div class="why-card reveal"><span class="why-icon">📈</span>
-                    <div class="why-title">RESULTS-DRIVEN</div>
-                    <p class="why-desc">Every strategy is tied to real, measurable outcomes — qualified leads,
-                        conversions, and revenue growth.</p>
+                <div class="why-card reveal"><span class="why-icon">💬</span>
+                    <div class="why-title">DIRECT COMMUNICATION</div>
+                    <p class="why-desc">Clear communication from planning through delivery. You always know where things stand.</p>
+                </div>
+                <div class="why-card reveal"><span class="why-icon">🔧</span>
+                    <div class="why-title">LONG-TERM SUPPORT</div>
+                    <p class="why-desc">We can continue supporting and improving projects after launch. We're not gone once it goes live.</p>
                 </div>
             </div>
         </section>
@@ -2831,15 +2985,13 @@
         <section id="contact">
             <div class="section-header reveal">
                 <div class="section-tag">// GET IN TOUCH</div>
-                <h2 class="section-title">LET'S <span>CONNECT</span></h2>
+                <h2 class="section-title">HAVE A PROJECT <span>IN MIND?</span></h2>
                 <div class="section-line"></div>
             </div>
             <div class="contact-grid">
                 <div class="reveal">
-                    <h3>READY TO BUILD SOMETHING LEGENDARY?</h3>
-                    <p>Whether you need a jaw-dropping website, a viral product video, an AI agent that runs your entire
-                        sales pipeline, or a brand identity that dominates its market — Web Scratch is your unfair
-                        advantage.</p>
+                    <h3>Tell us what you're looking to build.</h3>
+                    <p>We'll review your requirements and get back to you within 24 hours. Whether it's a website, an application, AI automation or a creative project — we'd like to hear about it.</p>
                     <ul class="contact-items">
                         <li>
                             <div class="c-icon">📧</div><a
@@ -2903,9 +3055,8 @@
                 <div class="footer-brand"><img src="Web Scratch Logo.png" alt="Web Scratch">
                     <div class="footer-brand-text">WEB<span>SCRATCH</span></div>
                 </div>
-                <div class="footer-copy">© 2026 WEB SCRATCH</div>
-                <div class="footer-links"><a href="#hero">HOME</a><a href="#services">SERVICES</a><a
-                        href="#projects">WORK</a><a href="#social">SOCIAL MEDIA</a><a href="#contact">CONTACT</a></div>
+                <div class="footer-copy">Digital Products · AI · Design<br>India · Working with clients and partners internationally<br><br>© 2026 WEB SCRATCH</div>
+                <div class="footer-links"><a href="#hero">HOME</a><a href="#services">SERVICES</a><a href="#projects">WORK</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
             </div>
         </footer>
     </div>
@@ -2918,7 +3069,7 @@
             var intro = document.getElementById('intro');
             var site = document.getElementById('site');
             document.body.style.overflow = 'hidden';
-            var statuses = ['// INITIALIZING SYSTEM...', '// LOADING INTERFACE...', '// ESTABLISHING CONNECTION...', '// BOOTING WEB SCRATCH...', '// SYSTEM READY ✓'];
+            var statuses = ['// LOADING INTERFACE...', '// ESTABLISHING CONNECTION...', '// BOOTING WEBSCRATCH...', '// SYSTEM READY ✓'];
             var si = 0, stEl = document.getElementById('intro-status');
             var stInt = setInterval(function () { si++; if (si < statuses.length) stEl.textContent = statuses[si]; else clearInterval(stInt); }, 680);
 
@@ -2999,7 +3150,7 @@
             var heroServices = document.getElementById('hero-services');
             if (heroServices) heroServices.onclick = function () { document.getElementById('services').scrollIntoView({ behavior: 'smooth' }); };
             var heroWork = document.getElementById('hero-work');
-            if (heroWork) heroWork.onclick = function () { document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }); };
+            if (heroWork) heroWork.onclick = function () { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); };
 
             // ── Inject coding.svg into hero (fetch → innerHTML, same as Rent Nivas) ──
             (function () {
@@ -3067,90 +3218,45 @@
                 });
             }
 
-            // MODAL - FIXED VIDEO PLAYBACK
+            // MODAL
             var overlay = document.getElementById('modal-overlay');
-            var mVid = document.getElementById('modal-video');
-            var noMedia = document.getElementById('modal-no-media');
-            var mCtrl = document.getElementById('modal-controls');
-            var cPlay = document.getElementById('ctrl-play');
-            var cRw = document.getElementById('ctrl-rw');
-            var cFf = document.getElementById('ctrl-ff');
-            var cBar = document.getElementById('ctrl-bar');
-            var cFill = document.getElementById('ctrl-fill');
-            var cThumb = document.getElementById('ctrl-thumb');
-            var cTime = document.getElementById('ctrl-time');
-            var cMute = document.getElementById('ctrl-mute');
-            var cVol = document.getElementById('ctrl-vol');
-            var cFs = document.getElementById('ctrl-fs');
-            var tabPlayer = document.getElementById('tab-player');
-            var tabInfo = document.getElementById('tab-info');
-
-            function formatTime(sec) { if (isNaN(sec) || !isFinite(sec)) return '0:00'; var m = Math.floor(sec / 60); var s = Math.floor(sec % 60); return m + ':' + (s < 10 ? '0' : '') + s; }
-
-            function updateTime() {
-                if (!mVid || !mVid.duration) return;
-                cTime.textContent = formatTime(mVid.currentTime) + ' / ' + formatTime(mVid.duration);
-                var percent = (mVid.currentTime / mVid.duration) * 100;
-                if (cFill) cFill.style.width = percent + '%';
-                if (cThumb) cThumb.style.left = 'calc(' + percent + '% - 8px)';
-            }
-
-            function updatePlayButton() { if (cPlay) cPlay.textContent = mVid.paused ? '▶' : '⏸'; }
 
             function openModal(card) {
-                var vidSrc = card.dataset.video || '';
+                var projUrl = card.dataset.url || '';
+                var thumb = card.dataset.thumb || '';
+
+                // Populate info
                 var titleEl = document.getElementById('modal-proj-name');
                 var descEl = document.getElementById('modal-proj-desc');
                 var tagsEl = document.getElementById('modal-proj-tags');
+                var visitWrap = document.getElementById('modal-visit-wrap');
+                var thumbWrap = document.getElementById('modal-thumb-wrap');
+                var thumbImg = document.getElementById('modal-thumb-img');
 
                 if (titleEl) titleEl.textContent = card.dataset.title || '';
                 if (descEl) descEl.textContent = card.dataset.desc || '';
-                if (tagsEl) tagsEl.innerHTML = (card.dataset.tags || '').split(',').filter(Boolean).map(function (t) { return '<span class="modal-info-tag">' + t.trim() + '</span>'; }).join('');
+                if (tagsEl) tagsEl.innerHTML = (card.dataset.tags || '').split(',').filter(Boolean).map(function (t) {
+                    return '<span class="modal-info-tag">' + t.trim() + '</span>';
+                }).join('');
 
-                // Reset video state
-                if (mVid) {
-                    mVid.pause();
-                    mVid.src = '';
-                    mVid.style.display = 'none';
-                    mVid.removeAttribute('src');
-                    mVid.load();
-                }
-                if (noMedia) noMedia.style.display = 'flex';
-                if (mCtrl) mCtrl.style.display = 'none';
-                if (cPlay) cPlay.textContent = '▶';
-
-                if (vidSrc && mVid) {
-                    // Set new video source
-                    mVid.src = vidSrc;
-                    mVid.style.display = 'block';
-                    if (noMedia) noMedia.style.display = 'none';
-                    if (mCtrl) mCtrl.style.display = 'block';
-
-                    // Load and play video
-                    mVid.load();
-
-                    // Use canplay event to ensure video is ready
-                    mVid.addEventListener('canplay', function onCanPlay() {
-                        mVid.play().catch(function (error) {
-                            console.log("Auto-play prevented:", error);
-                        });
-                        mVid.removeEventListener('canplay', onCanPlay);
-                    }, { once: true });
-
-                    // Update time when metadata loaded
-                    mVid.addEventListener('loadedmetadata', function onMeta() {
-                        updateTime();
-                        if (cVol) cVol.value = mVid.volume;
-                        mVid.removeEventListener('loadedmetadata', onMeta);
-                    }, { once: true });
+                // Thumbnail — show for all projects that have data-thumb
+                if (thumbWrap && thumbImg) {
+                    if (thumb) {
+                        thumbImg.src = thumb;
+                        thumbImg.alt = card.dataset.title || '';
+                        thumbWrap.style.display = 'block';
+                    } else {
+                        thumbWrap.style.display = 'none';
+                        thumbImg.src = '';
+                    }
                 }
 
-                // Reset to player tab
-                document.querySelectorAll('.modal-tab').forEach(function (t) {
-                    t.classList.toggle('active', t.dataset.tab === 'player');
-                });
-                if (tabPlayer) tabPlayer.style.display = 'block';
-                if (tabInfo) tabInfo.style.display = 'none';
+                // Visit button — only for projects with a URL
+                if (visitWrap) {
+                    visitWrap.innerHTML = projUrl
+                        ? '<a class="modal-visit-btn" href="' + projUrl + '" target="_blank" rel="noopener">↗ VISIT WEBSITE</a>'
+                        : '';
+                }
 
                 if (overlay) overlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
@@ -3159,13 +3265,6 @@
             function closeModal() {
                 if (overlay) overlay.classList.remove('open');
                 document.body.style.overflow = 'auto';
-                if (mVid) {
-                    mVid.pause();
-                    mVid.currentTime = 0;
-                    mVid.src = '';
-                    mVid.removeAttribute('src');
-                    mVid.load();
-                }
             }
 
             // Attach click handlers to all view buttons
@@ -3187,104 +3286,6 @@
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') closeModal();
             });
-
-            // Tab switching
-            document.querySelectorAll('.modal-tab').forEach(function (t) {
-                t.addEventListener('click', function () {
-                    document.querySelectorAll('.modal-tab').forEach(function (tab) {
-                        tab.classList.toggle('active', tab === t);
-                    });
-                    if (tabPlayer) tabPlayer.style.display = t.dataset.tab === 'player' ? 'block' : 'none';
-                    if (tabInfo) tabInfo.style.display = t.dataset.tab === 'info' ? 'block' : 'none';
-                });
-            });
-
-            // Video event listeners
-            if (mVid) {
-                mVid.addEventListener('timeupdate', updateTime);
-                mVid.addEventListener('play', updatePlayButton);
-                mVid.addEventListener('pause', updatePlayButton);
-                mVid.addEventListener('ended', function () {
-                    if (cPlay) cPlay.textContent = '▶';
-                    mVid.currentTime = 0;
-                });
-
-                // Handle video errors
-                mVid.addEventListener('error', function (e) {
-                    console.log("Video error:", e);
-                    if (noMedia) {
-                        noMedia.style.display = 'flex';
-                        noMedia.innerHTML = '<span>❌</span><div>// VIDEO ERROR //</div><div style="font-size:0.7rem;">Could not load video file</div>';
-                    }
-                });
-            }
-
-            // Control buttons
-            if (cPlay) cPlay.addEventListener('click', function () {
-                if (mVid) {
-                    if (mVid.paused) {
-                        mVid.play().catch(function (error) {
-                            console.log("Play failed:", error);
-                        });
-                    } else {
-                        mVid.pause();
-                    }
-                }
-            });
-
-            if (cRw) cRw.addEventListener('click', function () {
-                if (mVid) mVid.currentTime = Math.max(0, mVid.currentTime - 10);
-            });
-
-            if (cFf) cFf.addEventListener('click', function () {
-                if (mVid) mVid.currentTime = Math.min(mVid.duration || 0, mVid.currentTime + 10);
-            });
-
-            if (cMute) cMute.addEventListener('click', function () {
-                if (mVid) {
-                    mVid.muted = !mVid.muted;
-                    cMute.textContent = mVid.muted ? '🔇' : '🔊';
-                }
-            });
-
-            if (cVol) cVol.addEventListener('input', function () {
-                if (mVid) {
-                    mVid.volume = parseFloat(this.value);
-                    mVid.muted = false;
-                    if (cMute) cMute.textContent = '🔊';
-                }
-            });
-
-            if (cFs) cFs.addEventListener('click', function () {
-                var screen = document.getElementById('modal-screen');
-                if (screen && screen.requestFullscreen) screen.requestFullscreen();
-            });
-
-            // Seek bar
-            if (cBar) {
-                var seeking = false;
-
-                function seekHandler(e) {
-                    if (!mVid || !mVid.duration) return;
-                    var rect = cBar.getBoundingClientRect();
-                    var pos = (e.clientX - rect.left) / rect.width;
-                    pos = Math.max(0, Math.min(1, pos));
-                    mVid.currentTime = pos * mVid.duration;
-                }
-
-                cBar.addEventListener('mousedown', function (e) {
-                    seeking = true;
-                    seekHandler(e);
-                });
-
-                document.addEventListener('mousemove', function (e) {
-                    if (seeking) seekHandler(e);
-                });
-
-                document.addEventListener('mouseup', function () {
-                    seeking = false;
-                });
-            }
         })();
     </script>
 </body>
